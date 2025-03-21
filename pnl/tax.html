@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profit & Loss Statement</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Profit & Loss Statement</h1>
+
+      <!-- Tax Section -->
+
+      <!-- Profit & Tax Calculation -->
+      <div class="section">
+        <h2>Profit & Tax</h2>
+        <table>
+          <tr>
+            <td><strong>Profit Before Tax</strong></td>
+            <td class="result">
+              <strong>₹ <span id="profitBeforeTax">0</span></strong>
+            </td>
+          </tr>
+          <tr>
+            <td>Tax Expenses</td>
+            <td class="input-group">
+              <span>₹</span
+              ><input type="number" id="taxExpense" min="0" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Net Profit</strong></td>
+            <td class="result">
+              <strong>₹ <span id="netProfit">0</span></strong>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <button onclick="calculateProfitLoss()">Calculate</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

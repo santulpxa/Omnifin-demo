@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit & Loss Statement</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="FrontSyle.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">OMNIFIN.SOLUTION</div>
+        <div class="content">
+            <div class="sidebar">
+                <div class="input-item">
+                    <div class="bal">
+                        <p>Profit & Loss Statement (INR)</p>
+                    </div>
+
+                    <div class="bs">
+                        <p>Balance Sheet (INR)</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="main">
+                <div class="main-head">
+                    <div class="ppl">
+                        <h1 class="PL">Profit & Loss Statement </h1>
+                    </div>
+                    <select name="Profit & Loss Statement" id="profitLossDropdown" class="selector">
+                        <option value="Revenue">Revenue</option>
+                        <option value="Expenses">Expenses</option>
+                        <option value="Tax">Tax</option>
+                    </select>
+                    <!-- Button to Open Modal -->
+                    <button class="open-modal-btn" onclick="redirectToPage();">Add</button>
+
+                    <!-- Modal Structure -->
+                    <div class="modal" id="myModal1">
+                        <div class="modal-content">
+                            <button class="close-modal-btn" onclick="closeModal1()">✖</button>
+                            <div class="container">
+                                <h1>Profit & Loss Statement</h1>
+                        
+                                <!-- Revenue Section -->
+                                <div class="section">
+                                    <h2>Income</h2>
+                                    <table>
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Amount (INR)</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Revenue from operations</td>
+                                            <td class="input-group"><span>₹</span><input type="number" id="revenue" min="0" value="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Other Income</td>
+                                            <td class="input-group"><span>₹</span><input type="number" id="otherIncome" min="0" value="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Total Income</strong></td>
+                                            <td class="result"><strong>₹ <span id="totalIncome">0</span></strong></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <button onclick="calculateProfitLoss()">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Structure -->
+                    <div class="modal" id="myModal2">
+                        <div class="modal-content">
+                            <button class="close-modal-btn" onclick="closeModal2()">✖</button>
+                            <div class="container-form">
+                                <h1>Profit & Loss Statement</h1>
+                          
+                                <!-- Expenses Section -->
+                          
+                                <!-- Expenses Section -->
+                                <div class="section">
+                                  <h2>Expenses</h2>
+                                  <table>
+                                    <tr>
+                                      <th>Description</th>
+                                      <th>Amount (INR)</th>
+                                    </tr>
+                                    <tr>
+                                      <td>Cost of Materials Consumed</td>
+                                      <td class="input-group">
+                                        <span>₹</span
+                                        ><input type="number" id="materialsCost" min="0" value="0" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Changes in Inventories of Finished Goods</td>
+                                      <td class="input-group">
+                                        <span>₹</span
+                                        ><input type="number" id="inventoryChange" min="0" value="0" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Cost of Goods Sold</td>
+                                      <td class="input-group">
+                                        <span>₹</span><input type="number" id="cogs" min="0" value="0" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Employee Benefits Expense</td>
+                                      <td class="input-group">
+                                        <span>₹</span
+                                        ><input type="number" id="employeeExpense" min="0" value="0" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Depreciation</td>
+                                      <td class="input-group">
+                                        <span>₹</span
+                                        ><input type="number" id="depreciation" min="0" value="0" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Finance Costs</td>
+                                      <td class="input-group">
+                                        <span>₹</span
+                                        ><input type="number" id="financeCost" min="0" value="0" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Other Expenses</td>
+                                      <td class="input-group">
+                                        <span>₹</span
+                                        ><input type="number" id="otherExpense" min="0" value="0" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td><strong>Total Expenses</strong></td>
+                                      <td class="result">
+                                        <strong>₹ <span id="totalExpenses">0</span></strong>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                          
+                                <button onclick="calculateProfitLoss()">Calculate</button>
+                              </div>
+                            
+                        </div>
+                    </div>
+                    <!-- Modal Structure -->
+                    <div class="modal" id="myModal3">
+                        <div class="modal-content">
+                            <button class="close-modal-btn" onclick="closeModal3()">✖</button>
+                            <div class="container-form">
+                                <h1>Profit & Loss Statement</h1>
+                          
+                                <!-- Tax Section -->
+                          
+                                <!-- Profit & Tax Calculation -->
+                                <div class="section">
+                                  <h2>Profit & Tax</h2>
+                                  <table>
+                                    <tr>
+                                      <td><strong>Profit Before Tax</strong></td>
+                                      <td class="result">
+                                        <strong>₹ <span id="profitBeforeTax">0</span></strong>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Tax Expenses</td>
+                                      <td class="input-group">
+                                        <span>₹</span
+                                        ><input type="number" id="taxExpense" min="0" value="0" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td><strong>Net Profit</strong></td>
+                                      <td class="result">
+                                        <strong>₹ <span id="netProfit">0</span></strong>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <button onclick="calculateProfitLoss()">Calculate</button>
+                              </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!--dowload tabel view-->
+                <div class="hero-page">
+                    <div class="hero">
+                        <!-- This is Heading -->
+                        <div class="heading">Profit & Loss Statements</div>
+                        <!-- This is table 1 -->
+
+                        <table>
+                            <tr>
+                                <th class="table-head-statements">Statements</th>
+                                <th class="table-head-year">2022/23</th>
+                                <th class="table-head-year">2023/24</th>
+                                <th class="table-head-year">2024/25</th>
+                                <th class="table-head-year">2025/26</th>
+                                <th class="table-head-year">2026/27</th>
+                            </tr>
+                            <tr class="add-color">
+                                <th>Revenue</th>
+                                <th>Audited</th>
+                                <th>Audited</th>
+                                <th>Projected</th>
+                                <th>Projected</th>
+                                <th>Projected</th>
+                            </tr>
+                            <tr>
+                                <td>Revenue From Operation</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Other Income</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Provisions</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- Total Revenue Section -->
+                        <table>
+                            <tr>
+                                <th class="table-head-statements">Total Revenue/Income</th>
+                                <th>Amount</th>
+                                <th>Amount</th>
+                                <th>Amount</th>
+                                <th>Amount</th>
+                                <th>Amount</th>
+                            </tr>
+                            <tr class="add-output-color">
+                                <td><b>Total Revenue</b></td>
+                                <td>Output Value</td>
+                                <td>Output Value</td>
+                                <td>Output Value</td>
+                                <td>Output Value</td>
+                                <td>Output Value</td>
+                            </tr>
+                        </table>
+                        <br /><br />
+                        <!-- This is table 2 -->
+
+                        <table>
+                            <tr>
+                                <th class="table-head-statements"><br></th>
+                                <!-- <th class="table-head-year">31/Mar/23</th>
+                            <th class="table-head-year">31/Mar/23</th>
+                            <th class="table-head-year">31/Mar/23</th>
+                            <th class="table-head-year">31/Mar/23</th>
+                            <th class="table-head-year">31/Mar/23</th> -->
+                            </tr>
+                            <tr class="add-color">
+                                <th>Expenses</th>
+                                <th>Audited</th>
+                                <th>Audited</th>
+                                <th>Projected</th>
+                                <th>Projected</th>
+                                <th>Projected</th>
+                            </tr>
+                            <tr>
+                                <td>Cost of Materials Consumed</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Changes in Inventories of Finished goods</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Cost of Goods Sold</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Employee benefits Expense</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Depreciation</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Finance Cost</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Other Expenses</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <!-- Total Expenses Section -->
+                        <table>
+                            <tr>
+                                <th class="table-head-statements">Total Expenses</th>
+                                <th>Amount</th>
+                                <th>Amount</th>
+                                <th>Amount</th>
+                                <th>Amount</th>
+                                <th>Amount</th>
+                            </tr>
+                            <tr class="add-output-color">
+                                <td><b>Total Expenses</b></td>
+                                <td>Output Value</td>
+                                <td>Output Value</td>
+                                <td>Output Value</td>
+                                <td>Output Value</td>
+                                <td>Output Value</td>
+                            </tr>
+
+                    </div>
+
+                </div>
+
+
+
+                <!--   <div class="buttons">
+                    <button>Next</button>
+                    <button>Submit</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <script src="modal.js"></script>
+    <script src="script.js"></script>
+    <script src="../pnl/script.js"></script>
+</body>
+
+</html>

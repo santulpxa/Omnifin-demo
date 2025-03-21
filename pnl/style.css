@@ -1,0 +1,113 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Container for the Profit & Loss Statement */
+.container {
+    width: 70%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1, h2 {
+    color: #333;
+    text-align: left;
+}
+
+/* Section Styling */
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+/* Table Styling */
+table {
+    width: 100%;  /* Ensures the table uses the full width */
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Header Row Styling */
+th {
+    background: #007bff;
+    color: white;
+}
+
+/* Reduce width of the amount column and align right */
+th:nth-child(2), td:nth-child(2) {
+    width: 160px;
+    text-align: right;
+}
+
+/* Input field with Rupee sign */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.input-group span {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Style for input with Rupee sign */
+.input-group input {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: right;
+}
+
+/* Remove number input arrows */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Button Styling */
+button {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Right-align calculated amounts with ₹ sign */
+.result {
+    font-weight: bold;
+    text-align: right;
+}

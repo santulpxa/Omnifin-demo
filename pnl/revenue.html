@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit & Loss Statement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Profit & Loss Statement</h1>
+
+        <!-- Revenue Section -->
+        <div class="section">
+            <h2>Income</h2>
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <th>Amount (INR)</th>
+                </tr>
+                <tr>
+                    <td>Revenue from operations</td>
+                    <td class="input-group"><span>₹</span><input type="number" id="revenue" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Other Income</td>
+                    <td class="input-group"><span>₹</span><input type="number" id="otherIncome" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td><strong>Total Income</strong></td>
+                    <td class="result"><strong>₹ <span id="totalIncome">0</span></strong></td>
+                </tr>
+            </table>
+        </div>
+        <button onclick="calculateProfitLoss()">Calculate</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

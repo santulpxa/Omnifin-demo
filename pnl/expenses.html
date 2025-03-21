@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profit & Loss Statement</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Profit & Loss Statement</h1>
+
+      <!-- Expenses Section -->
+
+      <!-- Expenses Section -->
+      <div class="section">
+        <h2>Expenses</h2>
+        <table>
+          <tr>
+            <th>Description</th>
+            <th>Amount (INR)</th>
+          </tr>
+          <tr>
+            <td>Cost of Materials Consumed</td>
+            <td class="input-group">
+              <span>₹</span
+              ><input type="number" id="materialsCost" min="0" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td>Changes in Inventories of Finished Goods</td>
+            <td class="input-group">
+              <span>₹</span
+              ><input type="number" id="inventoryChange" min="0" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td>Cost of Goods Sold</td>
+            <td class="input-group">
+              <span>₹</span><input type="number" id="cogs" min="0" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td>Employee Benefits Expense</td>
+            <td class="input-group">
+              <span>₹</span
+              ><input type="number" id="employeeExpense" min="0" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td>Depreciation</td>
+            <td class="input-group">
+              <span>₹</span
+              ><input type="number" id="depreciation" min="0" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td>Finance Costs</td>
+            <td class="input-group">
+              <span>₹</span
+              ><input type="number" id="financeCost" min="0" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td>Other Expenses</td>
+            <td class="input-group">
+              <span>₹</span
+              ><input type="number" id="otherExpense" min="0" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Total Expenses</strong></td>
+            <td class="result">
+              <strong>₹ <span id="totalExpenses">0</span></strong>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <button onclick="calculateProfitLoss()">Calculate</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

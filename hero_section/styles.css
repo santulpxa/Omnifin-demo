@@ -1,0 +1,191 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Make the whole page take full screen */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+/* Container takes full width and height */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+/* Header */
+.header {
+    background-color: #26A69A;
+    color: black;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Content layout */
+.content {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #79d3c9;
+    width: 22%;
+    
+    font-style: italic;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    text-align:center;
+    offset-distance: 30px;
+    
+}
+
+.input-item{
+    width: 100%;
+
+}
+
+.bal{
+    margin-top: 10%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+.bal:hover{
+    background-color: #1e8e86;
+}
+
+
+.bs{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+.bs:hover{
+    background-color: #1e8e86;
+}
+
+
+
+/* Main section */
+.main {
+    width: 78%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.063);
+}
+
+.main-head{
+    text-align: center;
+    
+}
+
+
+.selector{
+     padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%; 
+    padding-right: 1%;
+    background-color: rgba(199, 193, 187, 0.752);  
+}
+
+.add-button{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%; 
+    padding-right: 1%;
+}
+
+.ppl{
+    text-align: center;
+    
+    
+}
+
+.PL{
+   text-align: center;
+}
+
+.hero-page{
+    background-color: rgba(237, 237, 237, 0.478);
+    height: 80%;
+    width: 100%;
+}
+
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.buttons button {
+    background-color: #26A69A;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: black;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #1e8e86;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input-group input {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
+
